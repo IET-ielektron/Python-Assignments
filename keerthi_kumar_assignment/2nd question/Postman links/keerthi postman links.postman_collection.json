@@ -1,0 +1,52 @@
+{
+	"info": {
+		"_postman_id": "01af8a87-8525-4700-bc66-112527225633",
+		"name": "keerthi postman links",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get employess custom method",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://emp-mgr-rel.herokuapp.com/",
+					"protocol": "https",
+					"host": [
+						"emp-mgr-rel",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "f63f4a2e-dd7b-44da-a4f5-de2cf0edd758",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "00a5220b-1896-4b6c-adeb-354eea027be9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

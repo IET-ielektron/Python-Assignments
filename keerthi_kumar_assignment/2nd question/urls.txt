@@ -1,0 +1,6 @@
+Links for deployed version:
+https://emp-mgr-rel.herokuapp.com/
+
+
+Links for local setup version:
+http://127.0.0.1:8000/

@@ -1,0 +1,12 @@
+hierarchey:
+|_managerA
+      |___emp1
+      |___emp3
+      |___emp4
+      |___emp5
+|
+|_managerB
+      |___em2
+      |___em6
+      |___em7
+      |___em8
