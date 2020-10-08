@@ -5,4 +5,5 @@ python - 3.8.5
 
 STEPS:
 1. validate the string first
-2. convert the String to JSON 
+ if valid:
+   2. convert the String to JSON output

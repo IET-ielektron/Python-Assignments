@@ -1,0 +1,43 @@
+python manage.py shell
+
+>>>from emp_mgr_rel.models import Employee
+
+>>> ceo = Employee(emp_name='Shiva(ceo)')
+>>> ceo.save()
+>>> managerA = Employee(emp_name='managerA', manager_name = ceo)
+>>> managerA.save()
+>>> managerB = Employee(emp_name='managerB', manager_name = ceo)
+>>> managerB.save()
+>>> emp1 = Employee(emp_name='emp1', manager_name = managerA)
+>>> emp1.save()
+>>> emp2 = Employee(emp_name='emp2', manager_name = managerB)
+>>> emp2.save()
+>>> emp3 = Employee(emp_name='emp3', manager_name = managerA)
+>>> emp3.save()
+>>> emp4 = Employee(emp_name='emp4', manager_name = managerB)
+>>> emp4.save()
+>>> emp5 = Employee(emp_name='emp5', manager_name = managerA)
+>>> emp5.save()
+>>> emp6 = Employee(emp_name='emp6', manager_name = managerB)
+>>> emp6.save()
+
+>>> Employee.objects.all()
+>>> <QuerySet [<Employee: Shiva(ceo)>, <Employee: managerA>, <Employee: managerB>, <Employee: emp1>, <Employee: emp2>, <Employee: emp3>, <Employee: emp4>, <Employee: emp5>, <Employee: emp6>
+
+--generated using sqlmigrate <appname> <migration_file_name>
+
+CREATE TABLE "new__emp_mgr_rel_employee" ("manager_id" integer NULL REFERENCES "emp_mgr_rel_employee" ("emp_id") DEFERRABLE INITIALLY DEFERRED, "emp_id" integer NOT NULL PRIMARY KEY AUTOINC
+REMENT, "emp_name" varchar(100) NOT NULL);
+INSERT INTO "new__emp_mgr_rel_employee" ("emp_id", "emp_name", "manager_id") SELECT "emp_id", "emp_name", "manager_id" FROM "emp_mgr_rel_employee";
+DROP TABLE "emp_mgr_rel_employee";
+ALTER TABLE "new__emp_mgr_rel_employee" RENAME TO "emp_mgr_rel_employee";
+CREATE INDEX "emp_mgr_rel_employee_manager_id_73af87e3" ON "emp_mgr_rel_employee" ("manager_id");
+COMMIT;
+
+
+--manually writtern
+CREATE TABLE Employee(
+    emp_id = models.AutoField(primary_key=True)
+    emp_name = models.CharField(max_length=100)
+    manager_name = models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='emp_mgr_rel.employee')
+);

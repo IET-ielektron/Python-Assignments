@@ -1,0 +1,13 @@
+hierarchey:
+Shiva(ceo)
+|
+|_managerA
+|      |___emp1
+|      |___emp3
+|      |___emp5
+|
+|_managerB
+      |___em2
+      |___em4
+      |___em6
+    
