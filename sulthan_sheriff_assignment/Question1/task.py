@@ -87,5 +87,5 @@ def json_string(example):
     json_object=json.dumps(final_result,indent=4)
     print(json_object)
 
-json_string('((A=5&&B=6)||(C=3&D=5))')
+json_string('((A=5&&B=6)||(C=3&&D=5))')
 
