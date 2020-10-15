@@ -38,18 +38,25 @@ def json_string(example):
     if len(equal)%2 != 0:
         print('Syntax invalid')
         return 0
+
     example_no_space=example.replace(" ","") # removing white spaces
+    # print(example_no_space[11], example_no_space[12])
     print(example_no_space)
-    print(example_no_space.find("&"))
+    #print(example_no_space.find("&"))
+
+    if example_no_space[11] != example_no_space[12]:
+        print('syntax invalid')
+        return 0
+
 
     # for main operator with manuplation
     center_operator=None
     if example_no_space[11]=="|":
-        center_operator="or"
+        center_operator="OR"
     elif example_no_space[11]=="&":
         center_operator="and"
     elif example_no_space[11]=="!":
-        center_operator="not"
+        center_operator="NOT"
     else:
         pass
         
@@ -87,5 +94,5 @@ def json_string(example):
     json_object=json.dumps(final_result,indent=4)
     print(json_object)
 
-json_string('((A=5&&B=6)||(C=3&&D=5))')
+json_string('((A=2 || G=2) && (C=4 && D=9))')
 
