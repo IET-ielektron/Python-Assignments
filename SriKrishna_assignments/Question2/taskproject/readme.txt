@@ -9,7 +9,7 @@
 
 #go to project directory
 
-cd mysite
+cd taskproject
 
 #create virtual environment
 
