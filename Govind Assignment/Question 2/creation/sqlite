@@ -1,0 +1,48 @@
+Database Sqlit3:
+
+
+Name Database:
+ 
+	sqlite3 employ
+
+Table -
+	Single Table -
+	Table Name
+		Employe
+		
+Schema:
+	ID -PRIMARY KEY(PK)
+	MANAGER ID -(FORIGN KEY of Self Reference Key)Single table
+	NAME - Text
+	MANAGER NAME -TEXT
+	
+
+hierarchey:
+(ceo)
+|
+|_managerA(govi)
+|      |___bala(emp)
+|      |___ashok(emp)
+|      |___koushik(emp)
+|
+|_managerB(sujith)
+      |___prakash(emp)
+      |___palson(emp)
+      
+Table:		
+	CREATE TABLE employees (
+	id INTEGER NOT NULL PRIMARY KEY,
+	managerId INTEGER REFERENCES employees(id), 
+	name VARCHAR(30) NOT NULL
+	managername VARCHAR(30) NOT NULL
+	);
+	
+	 	
+sample insert values:
+	sqlite> insert into employe values(3,1,'ashok','govi');
+	sqlite> insert into employe values(5,NULL,'sujith','');
+	sqlite> insert into employe values(6,5,'prakash','sujith');
+	sqlite> insert into employe values(8,1,'koushik','govi');
+	sqlite> insert into employe values(11,5,'paluson','sujith');
+
+
