@@ -1,0 +1,11 @@
+hierarchey:
+A(ceo)
+|
+|_____B (Manager)
+|     |___C
+|     |___E
+|
+|____D (Manager)
+     |___emp1
+     |___emp2
+    

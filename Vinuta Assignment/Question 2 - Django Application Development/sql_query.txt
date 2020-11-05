@@ -1,0 +1,41 @@
+-- Table structure for table `employee_employee`
+
+CREATE TABLE django_rest.employee_employee (
+	id int(11) NOT NULL,
+	emp_name varchar(100) not NULL,
+	manager_id int(11),
+	PRIMARY KEY id,
+    	FOREIGN KEY (id) REFERENCES django_rest.employee_employee (id)
+	);
+
+
+-- Drop table
+drop table django_rest.employee_employee
+
+
+--function to get the list of employee 
+CREATE OR REPLACE FUNCTION django_rest.get_employees()
+ RETURNS TABLE(id int, emp_name character varying, manager_id int)
+ LANGUAGE plpgsql
+AS $function$
+BEGIN
+   RETURN QUERY
+   select
+      E.id as emp_id,
+      E.emp_name as emp_name,
+      M.manager_id,
+      M.manager_name
+   from django_rest.employee_employee E
+   inner join django_rest.employee_employee M on M.manager_id = E.id;
+END; $function$
+;
+
+--select * from django_rest.get_employees()
+--drop function django_rest.get_employees()
+
+-- SQL Query
+
+SELECT E.id as emp_id, E.emp_name,M.emp_name as manager
+FROM employee_employee E
+JOIN employee_employee M ON M.manager_id=E.id
+
